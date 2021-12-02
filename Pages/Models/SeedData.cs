@@ -268,9 +268,36 @@ namespace Dirarys_Final_Project.Models
                 context.LandOfOrigins.AddRange(
                     new LandOfOrigin
                     {
-                        Name = ""
-                        Climate = ""
-                        GoverningType = ""
+                        Name = "Agria",
+                        Climate = "Polar",
+                        GoverningType = "Republic",
+                        Characters = new List<Character> {
+
+                        }
+                    },
+                    new LandOfOrigin
+                    {
+                        Name = "Eshuyca",
+                        Climate = "Temperate",
+                        GoverningType = "Aristocracy",
+                        Characters = new List<Character> {
+
+                        }
+                    },
+                    new LandOfOrigin
+                    {
+                        Name = "Podrad",
+                        Climate = "Dry",
+                        GoverningType = "Empire",
+                        Characters = new List<Character> {
+
+                        }
+                    },
+                    new LandOfOrigin
+                    {
+                        Name = "Troetan",
+                        Climate = "Continental",
+                        GoverningType = "Monarchy",
                         Characters = new List<Character> {
 
                         }
@@ -280,8 +307,56 @@ namespace Dirarys_Final_Project.Models
                 context.Guilds.AddRange(
                     new Guild
                     {
-                        Name = ""
-                        MoralAlignment = ""
+                        Name = "Explorers",
+                        MoralAlignment = "Neutral",
+                        Characters = new List<Character> {
+
+                        }
+                    },
+                    new Guild
+                    {
+                        Name = "Craftsman",
+                        MoralAlignment = "Good",
+                        Characters = new List<Character> {
+
+                        }
+                    },
+                    new Guild
+                    {
+                        Name = "Merchant",
+                        MoralAlignment = "Neutral",
+                        Characters = new List<Character> {
+
+                        }
+                    },
+                    new Guild
+                    {
+                        Name = "Warrior",
+                        MoralAlignment = "Good",
+                        Characters = new List<Character> {
+
+                        }
+                    },
+                    new Guild
+                    {
+                        Name = "Mages",
+                        MoralAlignment = "Good",
+                        Characters = new List<Character> {
+
+                        }
+                    },
+                    new Guild
+                    {
+                        Name = "Assassins",
+                        MoralAlignment = "Evil",
+                        Characters = new List<Character> {
+
+                        }
+                    },
+                    new Guild
+                    {
+                        Name = "Thieves",
+                        MoralAlignment = "Neutral",
                         Characters = new List<Character> {
 
                         }
