@@ -1,0 +1,37 @@
+@page
+@model CharacterModel
+@{
+    ViewData["Title"] = "Character Page";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Height in meters</th>
+            <th scope="col">Weight in kilograms</th>
+            <th scope="col">Race</th>
+            <th scope="col">Specialization</th>
+            <th scope="col">Land of Origin</th>
+            <th scope="col">Guild</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model.Characters)
+        {
+            <tr>
+                <td>@Html.DisplayFor(CharacterStat => c.Name)</td>
+                <td>@Html.DisplayFor(CharacterStat => c.Age)</td>
+                <td>@Html.DisplayFor(CharacterStat => c.Height)</td>
+                <td>@Html.DisplayFor(CharacterStat => c.Weight)</td>
+                <td>@Html.DisplayFor(CharacterStat => c.Race)</td>
+                <td>@Html.DisplayFor(CharacterStat => c.Specialization)</td>
+                <td>@Html.DisplayFor(CharacterStat => c.Land.Name)</td>
+                <td>@Html.DisplayFor(CharacterStat => c.Guild.Name)</td>
+            </tr>
+        }
+    </tbody>
+</table>
