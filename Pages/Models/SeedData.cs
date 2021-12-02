@@ -28,6 +28,8 @@ namespace Dirarys_Final_Project.Models
                         Weight = 
                         Race = ""
                         Specialization = ""
+                        Land = 
+                        Guild = 
                     }
                 );
 
@@ -49,7 +51,7 @@ namespace Dirarys_Final_Project.Models
                         Name = ""
                         MoralAlignment = ""
                         Characters = new List<Character> {
-                            
+
                         }
                     }
                 );
