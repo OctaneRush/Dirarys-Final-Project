@@ -18,7 +18,73 @@ namespace Dirarys_Final_Project.Models
                 {
                     return; // db seeded.
                 }
-                
+
+                List<Guild> GuildsToSeed = new List<Guild>() {
+                    new Guild // GuildsToSeed[0]
+                    {
+                        Name = "Explorers",
+                        MoralAlignment = "Neutral",
+                    },
+                    new Guild // GuildsToSeed[1] 
+                    {
+                        Name = "Craftsman",
+                        MoralAlignment = "Good",
+                    },
+                    new Guild // GuildsToSeed[2]
+                    {
+                        Name = "Merchant",
+                        MoralAlignment = "Neutral",
+                    },
+                    new Guild // GuildsToSeed[3]
+                    {
+                        Name = "Warrior",
+                        MoralAlignment = "Good",
+                    },
+                    new Guild // GuildsToSeed[4]
+                    {
+                        Name = "Mages",
+                        MoralAlignment = "Good",
+                    },
+                    new Guild // GuildsToSeed[5]
+                    {
+                        Name = "Assassins",
+                        MoralAlignment = "Evil",
+                    },
+                    new Guild // GuildsToSeed[6]
+                    {
+                        Name = "Thieves",
+                        MoralAlignment = "Neutral",
+                    }
+                };
+                context.Guilds.AddRange(GuildsToSeed);
+                List<LandOfOrigin> LandsToSeed = new List<LandOfOrigin>() {
+                    new LandOfOrigin // LandsToSeed[0]
+                    {
+                        Name = "Agria",
+                        Climate = "Polar",
+                        GoverningType = "Republic",
+                    },
+                    new LandOfOrigin // LandsToSeed[1]
+                    {
+                        Name = "Eshuyca",
+                        Climate = "Temperate",
+                        GoverningType = "Aristocracy",
+                    },
+                    new LandOfOrigin // LandsToSeed[2]
+                    {
+                        Name = "Podrad",
+                        Climate = "Dry",
+                        GoverningType = "Empire",
+                    },
+                    new LandOfOrigin // LandsToSeed[3]
+                    {
+                        Name = "Troetan",
+                        Climate = "Continental",
+                        GoverningType = "Monarchy",
+                    }
+                };
+                context.LandOfOrigins.AddRange(LandsToSeed);
+
                 context.Characters.AddRange(
                     new Character
                     {
@@ -27,7 +93,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 1.8,
                         Weight = 81.6,
                         Race = "Human",
-                        Specialization = "One-Handed"
+                        Specialization = "One-Handed",
+                        Guild = GuildsToSeed[0],
+                        Land = LandsToSeed[0]
                     },
                     new Character
                     {
@@ -36,7 +104,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 2.2,
                         Weight = 108.8,
                         Race = "Orc",
-                        Specialization = "Two-Handed"
+                        Specialization = "Two-Handed",
+                        Guild = GuildsToSeed[0],
+                        Land = LandsToSeed[0]
                     },
                     new Character
                     {
@@ -45,7 +115,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 1.4,
                         Weight = 90.7,
                         Race = "Dwarf",
-                        Specialization = "Two-Handed"
+                        Specialization = "Two-Handed",
+                        Guild = GuildsToSeed[1],
+                        Land = LandsToSeed[2]
                     },
                     new Character
                     {
@@ -54,7 +126,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 1.7,
                         Weight = 86.2,
                         Race = "Wood Elf",
-                        Specialization = "Bow"
+                        Specialization = "Bow",
+                        Guild = GuildsToSeed[3],
+                        Land = LandsToSeed[1]
                     },
                     new Character
                     {
@@ -63,7 +137,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 1.1,
                         Weight = 45.3,
                         Race = "Halfling",
-                        Specialization = "Stealth"
+                        Specialization = "Stealth",
+                        Guild = GuildsToSeed[6],
+                        Land = LandsToSeed[2]
                     },
                     new Character
                     {
@@ -72,7 +148,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 1.3,
                         Weight = 54.4,
                         Race = "Goblin",
-                        Specialization = "Dual-Weild"
+                        Specialization = "Dual-Weild",
+                        Guild = GuildsToSeed[2],
+                        Land = LandsToSeed[1]
                     },
                     new Character
                     {
@@ -81,7 +159,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 5.5,
                         Weight = 544.3,
                         Race = "Giant",
-                        Specialization = "Two-Handed"
+                        Specialization = "Two-Handed",
+                        Guild = GuildsToSeed[3],
+                        Land = LandsToSeed[2]
                     },
                     new Character
                     {
@@ -90,7 +170,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 2.0,
                         Weight = 86.1,
                         Race = "High Elf",
-                        Specialization = "Magic"
+                        Specialization = "Magic",
+                        Guild = GuildsToSeed[4],
+                        Land = LandsToSeed[3]
                     },
                     new Character
                     {
@@ -99,7 +181,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 1.9,
                         Weight = 88.4,
                         Race = "Half-Elf",
-                        Specialization = "One-Handed"
+                        Specialization = "One-Handed",
+                        Guild = GuildsToSeed[5],
+                        Land = LandsToSeed[1]
                     },
                     new Character
                     {
@@ -108,7 +192,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 1.85,
                         Weight = 87.5,
                         Race = "Human",
-                        Specialization = "Magic"
+                        Specialization = "Magic",
+                        Guild = GuildsToSeed[4],
+                        Land = LandsToSeed[2]
                     },
                     new Character
                     {
@@ -117,7 +203,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 2.1,
                         Weight = 110.5,
                         Race = "Orc",
-                        Specialization = "Sword and Shield"
+                        Specialization = "Sword and Shield",
+                        Guild = GuildsToSeed[1],
+                        Land = LandsToSeed[3]
                     },
                     new Character
                     {
@@ -126,7 +214,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 1.35,
                         Weight = 89.4,
                         Race = "Dwarf",
-                        Specialization = "Dual-Weild"
+                        Specialization = "Dual-Weild",
+                        Guild = GuildsToSeed[3],
+                        Land = LandsToSeed[0]
                     },
                     new Character
                     {
@@ -135,7 +225,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 1.67,
                         Weight = 88.3,
                         Race = "Wood Elf",
-                        Specialization = "One-Handed"
+                        Specialization = "One-Handed",
+                        Guild = GuildsToSeed[6],
+                        Land = LandsToSeed[1]
                     },
                     new Character
                     {
@@ -144,7 +236,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 1.12,
                         Weight = 47.8,
                         Race = "Halfling",
-                        Specialization = "Bow"
+                        Specialization = "Bow",
+                        Guild = GuildsToSeed[2],
+                        Land = LandsToSeed[3]
                     },
                     new Character
                     {
@@ -153,7 +247,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 1.24,
                         Weight = 52.1,
                         Race = "Goblin",
-                        Specialization = "Stealth"
+                        Specialization = "Stealth",
+                        Guild = GuildsToSeed[5],
+                        Land = LandsToSeed[0]
                     },
                     new Character
                     {
@@ -162,7 +258,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 5.4,
                         Weight = 510.3,
                         Race = "Giant",
-                        Specialization = "Sword and Shield"
+                        Specialization = "Sword and Shield",
+                        Guild = GuildsToSeed[0],
+                        Land = LandsToSeed[1]
                     },
                     new Character
                     {
@@ -171,7 +269,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 1.94,
                         Weight = 83.6,
                         Race = "High Elf",
-                        Specialization = "One-Handed"
+                        Specialization = "One-Handed",
+                        Guild = GuildsToSeed[3],
+                        Land = LandsToSeed[3]
                     },
                     new Character
                     {
@@ -180,7 +280,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 2.05,
                         Weight = 89.7,
                         Race = "Half-Elf",
-                        Specialization = "Two-Handed"
+                        Specialization = "Two-Handed",
+                        Guild = GuildsToSeed[6],
+                        Land = LandsToSeed[3]
                     },
                     new Character
                     {
@@ -189,7 +291,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 1.94,
                         Weight = 90.4,
                         Race = "Half-Orc",
-                        Specialization = "Dual-Weild"
+                        Specialization = "Dual-Weild",
+                        Guild = GuildsToSeed[2],
+                        Land = LandsToSeed[0]
                     },
                     new Character
                     {
@@ -198,7 +302,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 1.94,
                         Weight = 89.7,
                         Race = "Human",
-                        Specialization = "Bow"
+                        Specialization = "Bow",
+                        Guild = GuildsToSeed[1],
+                        Land = LandsToSeed[2]
                     },
                     new Character
                     {
@@ -207,7 +313,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 2.1,
                         Weight = 94.3,
                         Race = "Half-Elf",
-                        Specialization = "One-Handed"
+                        Specialization = "One-Handed",
+                        Guild = GuildsToSeed[3],
+                        Land = LandsToSeed[3]
                     },
                     new Character
                     {
@@ -216,7 +324,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 1.38,
                         Weight = 95.7,
                         Race = "Dwarf",
-                        Specialization = "Sword and Sheild"
+                        Specialization = "Sword and Sheild",
+                        Guild = GuildsToSeed[0],
+                        Land = LandsToSeed[2]
                     },
                     new Character
                     {
@@ -225,7 +335,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 2.15,
                         Weight = 107.4,
                         Race = "Orc",
-                        Specialization = "Two-Handed"
+                        Specialization = "Two-Handed",
+                        Guild = GuildsToSeed[3],
+                        Land = LandsToSeed[3]
                     },
                     new Character
                     {
@@ -234,7 +346,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 5.7,
                         Weight = 530.8,
                         Race = "Giant",
-                        Specialization = "Two-Handed"
+                        Specialization = "Two-Handed",
+                        Guild = GuildsToSeed[1],
+                        Land = LandsToSeed[1]
                     },
                     new Character
                     {
@@ -243,7 +357,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 1.82,
                         Weight = 82.6,
                         Race = "Half-Orc",
-                        Specialization = "Bow"
+                        Specialization = "Bow",
+                        Guild = GuildsToSeed[3],
+                        Land = LandsToSeed[3]
                     },
                     new Character
                     {
@@ -252,7 +368,9 @@ namespace Dirarys_Final_Project.Models
                         Height = 1.85,
                         Weight = 81.2,
                         Race = "High Elf",
-                        Specialization = "Magic"
+                        Specialization = "Magic",
+                        Guild = GuildsToSeed[4],
+                        Land = LandsToSeed[3]
                     },
                     new Character
                     {
@@ -261,107 +379,11 @@ namespace Dirarys_Final_Project.Models
                         Height = 1.59,
                         Weight = 77.3,
                         Race = "Wood Elf",
-                        Specialization = "Stealth"
+                        Specialization = "Stealth",
+                        Guild = GuildsToSeed[6],
+                        Land = LandsToSeed[1]
                     }
                 );
-
-                context.LandOfOrigins.AddRange(
-                    new LandOfOrigin
-                    {
-                        Name = "Agria",
-                        Climate = "Polar",
-                        GoverningType = "Republic",
-                        Characters = new List<Character> {
-
-                        }
-                    },
-                    new LandOfOrigin
-                    {
-                        Name = "Eshuyca",
-                        Climate = "Temperate",
-                        GoverningType = "Aristocracy",
-                        Characters = new List<Character> {
-
-                        }
-                    },
-                    new LandOfOrigin
-                    {
-                        Name = "Podrad",
-                        Climate = "Dry",
-                        GoverningType = "Empire",
-                        Characters = new List<Character> {
-
-                        }
-                    },
-                    new LandOfOrigin
-                    {
-                        Name = "Troetan",
-                        Climate = "Continental",
-                        GoverningType = "Monarchy",
-                        Characters = new List<Character> {
-
-                        }
-                    }
-                );
-
-                context.Guilds.AddRange(
-                    new Guild
-                    {
-                        Name = "Explorers",
-                        MoralAlignment = "Neutral",
-                        Characters = new List<Character> {
-
-                        }
-                    },
-                    new Guild
-                    {
-                        Name = "Craftsman",
-                        MoralAlignment = "Good",
-                        Characters = new List<Character> {
-
-                        }
-                    },
-                    new Guild
-                    {
-                        Name = "Merchant",
-                        MoralAlignment = "Neutral",
-                        Characters = new List<Character> {
-
-                        }
-                    },
-                    new Guild
-                    {
-                        Name = "Warrior",
-                        MoralAlignment = "Good",
-                        Characters = new List<Character> {
-
-                        }
-                    },
-                    new Guild
-                    {
-                        Name = "Mages",
-                        MoralAlignment = "Good",
-                        Characters = new List<Character> {
-
-                        }
-                    },
-                    new Guild
-                    {
-                        Name = "Assassins",
-                        MoralAlignment = "Evil",
-                        Characters = new List<Character> {
-
-                        }
-                    },
-                    new Guild
-                    {
-                        Name = "Thieves",
-                        MoralAlignment = "Neutral",
-                        Characters = new List<Character> {
-
-                        }
-                    }
-                );
                 
                 context.SaveChanges();
             }
