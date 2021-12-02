@@ -2,7 +2,7 @@
 
 namespace Dirarys_Final_Project.Migrations
 {
-    public partial class IntitialCreate : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -43,8 +43,8 @@ namespace Dirarys_Final_Project.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(maxLength: 20, nullable: false),
                     Age = table.Column<int>(nullable: false),
-                    Height = table.Column<float>(nullable: false),
-                    Weight = table.Column<float>(nullable: false),
+                    Height = table.Column<double>(nullable: false),
+                    Weight = table.Column<double>(nullable: false),
                     Race = table.Column<string>(maxLength: 20, nullable: false),
                     Specialization = table.Column<string>(maxLength: 20, nullable: false),
                     LandID = table.Column<int>(nullable: false),

@@ -17,9 +17,9 @@ namespace Dirarys_Final_Project.Models
         public int Age {get; set;}
         [Range(0.50, 15.00)]
         [Required]
-        public float Height {get; set;}
+        public double Height {get; set;}
         [Range(0.50, 900.00)]
-        public float Weight {get; set;}
+        public double Weight {get; set;}
         [StringLength(20, MinimumLength = 3)]
         [Required]
         public string Race {get; set;}

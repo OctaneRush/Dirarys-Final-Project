@@ -27,7 +27,7 @@ namespace Dirarys_Final_Project.Migrations
                     b.Property<int>("GuildID")
                         .HasColumnType("INTEGER");
 
-                    b.Property<float>("Height")
+                    b.Property<double>("Height")
                         .HasColumnType("REAL");
 
                     b.Property<int>("LandID")
@@ -48,7 +48,7 @@ namespace Dirarys_Final_Project.Migrations
                         .HasColumnType("TEXT")
                         .HasMaxLength(20);
 
-                    b.Property<float>("Weight")
+                    b.Property<double>("Weight")
                         .HasColumnType("REAL");
 
                     b.HasKey("CharacterID");
