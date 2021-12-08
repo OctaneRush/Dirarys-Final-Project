@@ -9,13 +9,15 @@ using Microsoft.EntityFrameworkCore;
 using Dirarys_Final_Project.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Dirarys_Final_Project.Pages.Characters
+namespace Dirarys_Final_Project.Pages.Guilds
 {
     public class CharacterModel : PageModel
     {
         private readonly CharacterDbContext _context; // Replaces "db" variable
         private readonly ILogger<IndexModel> _logger;
         public List<Character> Characters {get; set;}
+        public List<LandOfOrigin> Lands {get; set;}
+        public List<Guild> Guilds {get; set;}
         // public SelectList ProfessorsDropDown {get; set;}
         public CharacterModel(CharacterDbContext context, ILogger<IndexModel> logger)
         {
@@ -26,6 +28,8 @@ namespace Dirarys_Final_Project.Pages.Characters
         public void OnGet()
         {
             Characters = _context.Characters.ToList();
+            Lands = _context.LandOfOrigins.ToList();
+            Guilds = _context.Guilds.ToList();
         }
 
         // public void OnPost()
