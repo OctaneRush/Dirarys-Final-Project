@@ -12,13 +12,13 @@
         <hr color="white" />
         <dl class="row">
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Land.Climate)
+                @Html.DisplayNameFor(model => model.Land.Climate) :
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Land.Climate)
             </dd>
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Land.GoverningType)
+                @Html.DisplayNameFor(model => model.Land.GoverningType) :
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Land.GoverningType)
@@ -26,7 +26,7 @@
             <br>
             <br>
             <dt class="col-sm-12">
-                <h6><u>Characters from this Land:</u></h6>
+                <h6>Characters from this Land :</h6>
             </dt>
             @foreach (var c in Model.Land.Characters)
             {
@@ -37,7 +37,7 @@
         </dl>
     </div>
     <br>
-    <div>|
-        <a class="text-white" asp-page="./Land">Back to Land List</a>
+    <div>
+        <u><a class="text-white" asp-page="./Land">Back to Land List</a></u>
     </div>
 </body>

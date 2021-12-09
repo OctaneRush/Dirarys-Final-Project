@@ -12,7 +12,7 @@
         <hr color="white" />
         <dl class="row">
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Guild.MoralAlignment)
+                @Html.DisplayNameFor(model => model.Guild.MoralAlignment) :
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Guild.MoralAlignment)
@@ -20,7 +20,7 @@
             <br>
             <br>
             <dt class="col-sm-12">
-                <h6><u>Characters in this Guild:</u></h6>
+                <h6>Characters in this Guild :</h6>
             </dt>
             @foreach (var c in Model.Guild.Characters)
             {
@@ -31,7 +31,7 @@
         </dl>
     </div>
     <br>
-    <div>|
-        <a class="text-white" asp-page="./Guild">Back to Guild List</a>
+    <div>
+        <u><a class="text-white" asp-page="./Guild">Back to Guild List</a></u>
     </div>
 </body>

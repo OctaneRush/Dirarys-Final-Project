@@ -26,6 +26,8 @@ namespace Dirarys_Final_Project.Pages.Characters
 
         [BindProperty(SupportsGet = true)]
         public string CurrentSort {get; set;}
+        [BindProperty(SupportsGet = true)]
+        public string searchString {get; set;}
 
         public async Task OnGetAsync()
         {
@@ -72,6 +74,24 @@ namespace Dirarys_Final_Project.Pages.Characters
             }
 
             Character = await query.Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
+        }
+
+        public async Task<IActionResult> OnPostAsync()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            if (searchString != null)
+            {
+                var query = _context.Characters.Where(c => c.Name.Contains(searchString));
+                Character = await query.Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
+            }
+            else
+            {
+                return RedirectToPage("./Index");
+            }
+            return Page();
         }
     }
 }
