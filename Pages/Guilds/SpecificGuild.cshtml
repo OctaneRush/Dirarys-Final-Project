@@ -1,0 +1,37 @@
+@page
+@model Dirarys_Final_Project.Pages.Guilds.SpecificGuildModel
+
+@{
+    ViewData["Title"] = "Guild";
+}
+
+<body class="bg-secondary bg-dark text-white">
+    <h1>@Html.DisplayFor(model => model.Guild.Name)</h1>
+
+    <div>
+        <hr color="white" />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Guild.MoralAlignment)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Guild.MoralAlignment)
+            </dd>
+            <br>
+            <br>
+            <dt class="col-sm-12">
+                <h6><u>Characters in this Guild:</u></h6>
+            </dt>
+            @foreach (var c in Model.Guild.Characters)
+            {
+                <dd class="col-sm-12">
+                @Html.DisplayFor(model => c.Name)
+                </dd>
+            }
+        </dl>
+    </div>
+    <br>
+    <div>|
+        <a class="text-white" asp-page="./Guild">Back to Guild List</a>
+    </div>
+</body>

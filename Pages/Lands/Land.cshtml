@@ -1,0 +1,32 @@
+@page
+@model LandModel
+@{
+    ViewData["Title"] = "Lands";
+}
+
+<body class="bg-secondary bg-dark text-white">
+    <h1>@ViewData["Title"]</h1>
+
+    <h5>Click on a land to see the characters that call it home!</h5>
+    <br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" class="text-white">Land</th>
+                <th scope="col" class="text-white">Climate</th>
+                <th scope="col" class="text-white">Government</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var l in Model.Lands)
+            {
+                <tr>
+                    <td><a class="text-white" asp-page="./SpecificLand" asp-route-id="@l.LandOfOriginID">@Html.DisplayFor(LandStat => l.Name)</a></td>
+                    <td class="text-white">@Html.DisplayFor(LandStat => l.Climate)</td>
+                    <td class="text-white">@Html.DisplayFor(LandStat => l.GoverningType)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

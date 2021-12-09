@@ -1,0 +1,43 @@
+@page
+@model Dirarys_Final_Project.Pages.Lands.SpecificLandModel
+
+@{
+    ViewData["Title"] = "Land";
+}
+
+<body class="bg-secondary bg-dark text-white">
+    <h1>@Html.DisplayFor(model => model.Land.Name)</h1>
+
+    <div>
+        <hr color="white" />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Land.Climate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Land.Climate)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Land.GoverningType)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Land.GoverningType)
+            </dd>
+            <br>
+            <br>
+            <dt class="col-sm-12">
+                <h6><u>Characters from this Land:</u></h6>
+            </dt>
+            @foreach (var c in Model.Land.Characters)
+            {
+                <dd class="col-sm-12">
+                @Html.DisplayFor(model => c.Name)
+                </dd>
+            }
+        </dl>
+    </div>
+    <br>
+    <div>|
+        <a class="text-white" asp-page="./Land">Back to Land List</a>
+    </div>
+</body>

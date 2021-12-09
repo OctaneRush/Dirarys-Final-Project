@@ -1,0 +1,30 @@
+@page
+@model GuildModel
+@{
+    ViewData["Title"] = "Guilds";
+}
+
+<body class="bg-secondary bg-dark text-white">
+    <h1>@ViewData["Title"]</h1>
+
+    <h5>Click on a guild to see the characters dedicated to each!</h5>
+    <br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" class="text-white">Guild</th>
+                <th scope="col" class="text-white">Moral Alignment</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var g in Model.Guilds)
+            {
+                <tr>
+                    <td><a class="text-white" asp-page="./SpecificGuild" asp-route-id="@g.GuildID">@Html.DisplayFor(GuildStat => g.Name)</a></td>
+                    <td class="text-white">@Html.DisplayFor(GuildStat => g.MoralAlignment)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
