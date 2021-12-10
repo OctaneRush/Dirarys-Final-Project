@@ -10,6 +10,7 @@
     <hr color="white" />
     <br>
     <div>
+        <!-- Displays information for selected character. -->
         <dl class="row">
             <dt class="col-sm-2 text-white">
                 @Html.DisplayNameFor(model => model.Character.Name) :
@@ -63,7 +64,9 @@
     </div>
     <br>
     <div>
+        <!-- Go to edit page for current character. -->
         <u><a class="text-white" asp-page="./Edit" asp-route-id="@Model.Character.CharacterID">Edit</a></u> |
+        <!-- Return to character list. -->
         <u><a class="text-white" asp-page="./Index">Back to List</a></u>
     </div>
 </body>

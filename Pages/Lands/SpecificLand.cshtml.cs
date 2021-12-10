@@ -9,10 +9,11 @@ using Dirarys_Final_Project.Models;
 
 namespace Dirarys_Final_Project.Pages.Lands
 {
+    // Page model for specific land page.
     public class SpecificLandModel : PageModel
     {
         private readonly Dirarys_Final_Project.Models.CharacterDbContext _context;
-
+        // Give model access to database.
         public SpecificLandModel(Dirarys_Final_Project.Models.CharacterDbContext context)
         {
             _context = context;
@@ -26,7 +27,7 @@ namespace Dirarys_Final_Project.Pages.Lands
             {
                 return NotFound();
             }
-
+            // Finds the selected land of origin and all characters belonging to that land.
             Land = await _context.LandOfOrigins
                 .Include(c => c.Characters)
                 .FirstOrDefaultAsync(c => c.LandOfOriginID == id);

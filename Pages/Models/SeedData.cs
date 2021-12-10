@@ -6,19 +6,21 @@ using System.Collections.Generic;
 
 namespace Dirarys_Final_Project.Models
 {
+    // Framework for seeding database with characters, guilds, and lands.
     public static class SeedData
     {
+        // Connect to database for seeding.
         public static void Initialize(IServiceProvider serviceProvider)
         {
             using (var context = new CharacterDbContext(
                 serviceProvider.GetRequiredService<DbContextOptions<CharacterDbContext>>()))
             {
-                // Look for any characters.
+                // Look for any characters, guilds, or lands.
                 if (context.Characters.Any() && context.LandOfOrigins.Any() && context.Guilds.Any())
                 {
                     return; // db seeded.
                 }
-
+                // List of guilds to seed.
                 List<Guild> GuildsToSeed = new List<Guild>() {
                     new Guild // GuildsToSeed[0]
                     {
@@ -56,7 +58,10 @@ namespace Dirarys_Final_Project.Models
                         MoralAlignment = "Neutral",
                     }
                 };
+                // Add guilds to database.
                 context.Guilds.AddRange(GuildsToSeed);
+
+                // List of lands to seed.
                 List<LandOfOrigin> LandsToSeed = new List<LandOfOrigin>() {
                     new LandOfOrigin // LandsToSeed[0]
                     {
@@ -83,8 +88,10 @@ namespace Dirarys_Final_Project.Models
                         GoverningType = "Monarchy",
                     }
                 };
+                // Add lands to database.
                 context.LandOfOrigins.AddRange(LandsToSeed);
 
+                // Add characters to database.
                 context.Characters.AddRange(
                     new Character
                     {
@@ -385,6 +392,7 @@ namespace Dirarys_Final_Project.Models
                     }
                 );
                 
+                // Save and close database connection.
                 context.SaveChanges();
             }
         }

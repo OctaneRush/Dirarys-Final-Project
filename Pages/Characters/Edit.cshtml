@@ -10,6 +10,7 @@
 <hr color="white" />
 <div class="row">
     <div class="col-md-4">
+        <!-- Character edit form. -->
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Character.CharacterID" />
@@ -53,6 +54,7 @@
                 <select asp-for="Character.GuildID" class="form-control" asp-items="ViewBag.GuildID"></select>
                 <span asp-validation-for="Character.GuildID" class="text-danger"></span>
             </div>
+            <!-- Save edited character. -->
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
@@ -61,6 +63,7 @@
 </div>
 
 <div>
+    <!-- Return to character list. -->
     <u><a class="text-white" asp-page="./Index">Back to List</a></u>
 </div>
 </body>

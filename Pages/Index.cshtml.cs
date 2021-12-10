@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Dirarys_Final_Project.Pages
 {
+    // Page model for home page of website.
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;

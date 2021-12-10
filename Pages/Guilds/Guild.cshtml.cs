@@ -11,11 +11,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Dirarys_Final_Project.Pages.Guilds
 {
+    // Page model for guild page.
     public class GuildModel : PageModel
     {
         private readonly CharacterDbContext _context; // Replaces "db" variable
         private readonly ILogger<IndexModel> _logger;
         public List<Guild> Guilds {get; set;}
+        // Give model access to database.
         public GuildModel(CharacterDbContext context, ILogger<IndexModel> logger)
         {
             _context = context;
@@ -24,6 +26,7 @@ namespace Dirarys_Final_Project.Pages.Guilds
 
         public void OnGet()
         {
+            // Gathers guilds from database and creates a list.
             Guilds = _context.Guilds.ToList();
         }
     }

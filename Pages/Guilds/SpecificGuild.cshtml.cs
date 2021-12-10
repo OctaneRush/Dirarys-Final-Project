@@ -9,10 +9,11 @@ using Dirarys_Final_Project.Models;
 
 namespace Dirarys_Final_Project.Pages.Guilds
 {
+    // Page model for specific guild page.
     public class SpecificGuildModel : PageModel
     {
-        private readonly Dirarys_Final_Project.Models.CharacterDbContext _context;
-
+        private readonly Dirarys_Final_Project.Models.CharacterDbContext _context; // Replaces "db" variable
+        // Give model access to database.
         public SpecificGuildModel(Dirarys_Final_Project.Models.CharacterDbContext context)
         {
             _context = context;
@@ -26,7 +27,7 @@ namespace Dirarys_Final_Project.Pages.Guilds
             {
                 return NotFound();
             }
-
+            // Finds the selected guild and all characters belonging to that guild.
             Guild = await _context.Guilds
                 .Include(c => c.Characters)
                 .FirstOrDefaultAsync(c => c.GuildID == id);

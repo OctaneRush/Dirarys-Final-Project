@@ -9,10 +9,11 @@ using Dirarys_Final_Project.Models;
 
 namespace Dirarys_Final_Project.Pages.Characters
 {
+    // Page model for create page.
     public class CreateModel : PageModel
     {
-        private readonly Dirarys_Final_Project.Models.CharacterDbContext _context;
-
+        private readonly Dirarys_Final_Project.Models.CharacterDbContext _context; // Replaces "db" variable
+        // Give model access to database.
         public CreateModel(Dirarys_Final_Project.Models.CharacterDbContext context)
         {
             _context = context;
@@ -20,8 +21,9 @@ namespace Dirarys_Final_Project.Pages.Characters
 
         public IActionResult OnGet()
         {
-        ViewData["GuildID"] = new SelectList(_context.Guilds, "GuildID", "MoralAlignment");
-        ViewData["LandID"] = new SelectList(_context.LandOfOrigins, "LandOfOriginID", "Climate");
+        // Lets user choose guild and land for new character.
+        ViewData["GuildID"] = new SelectList(_context.Guilds, "GuildID", "Name");
+        ViewData["LandID"] = new SelectList(_context.LandOfOrigins, "LandOfOriginID", "Name");
             return Page();
         }
 
@@ -35,7 +37,7 @@ namespace Dirarys_Final_Project.Pages.Characters
             {
                 return Page();
             }
-
+            // Add new character to database and save.
             _context.Characters.Add(Character);
             await _context.SaveChangesAsync();
 

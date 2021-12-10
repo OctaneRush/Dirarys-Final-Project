@@ -7,9 +7,11 @@
 
 <body class="bg-secondary bg-dark text-white">
 <h1>Character Info</h1>
+<!-- Link to take user to create character page. -->
 <h5><u><a class="text-white" asp-page="Create">Create New Character</a></u></h5>
 <br>
 <div>
+    <!-- Form used to create search bar. -->
     <form method="post" class="form-inline mb-2">
         <div class="form-group">
             <label class="control-label mr-1">Search by Name :</label>
@@ -29,6 +31,7 @@
     <table class="table">
         <thead>
             <tr>
+                <!-- Makes all table heading clickable to initiate sorting. -->
                 <th class="text-center">
                     @{
                         var firstSort = "name_asc";
@@ -93,7 +96,8 @@
             </tr>
         </thead>
         <tbody>
-    @foreach (var item in Model.Character) {
+        <!-- Display character information for each character in list with edit, details, delete for each. -->   
+        @foreach (var item in Model.Character) {
             <tr>
                 <td class="text-center text-white">
                     @Html.DisplayFor(modelItem => item.Name)
@@ -119,11 +123,12 @@
                     <u><a class="text-white" asp-page="./Delete" asp-route-id="@item.CharacterID">Delete</a></u>
                 </td>
             </tr>
-    }
+        }
         </tbody>
     </table>
 </div>
 <br>
+<!-- Used to disable previous and next buttons when on first or last page of list. -->
 @{
     var prevDisabled= "";
     if (Model.PageNum <= 1)
@@ -133,11 +138,12 @@
 }
 @{
     var nextDisabled= "";
-    if (Model.PageSize < 10)
+    if (Model.Character.Count() < 10)
     {
         nextDisabled = "disabled";
     }
 }
+<!-- Previous and Next paging buttons. -->
 <nav aria-label="Page navigation example">
     <ul class="pagination">
         <li class="page-item @prevDisabled"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum - 1)" asp-route-CurrentSort="@(Model.CurrentSort)">Previous</a></li>

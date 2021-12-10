@@ -9,7 +9,7 @@
 
     <h5>Click on a land to see the characters that call it home!</h5>
     <br>
-
+    <!-- Table to display all lands in database -->
     <div class="border border-white">
         <table class="table">
             <thead>
@@ -20,6 +20,7 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- Displays land information for each land. -->
                 @foreach (var l in Model.Lands)
                 {
                     <tr>

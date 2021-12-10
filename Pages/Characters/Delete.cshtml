@@ -11,6 +11,7 @@
     <h3>Are you sure you want to delete this character?</h3>
     <br>
     <div>
+        <!-- Display information for selected character. -->
         <dl class="row">
             <dt class="col-sm-2 text-white">
                 @Html.DisplayNameFor(model => model.Character.Name) :
@@ -61,12 +62,13 @@
                 @Html.DisplayFor(model => model.Character.Guild.Name)
             </dd>
         </dl>
-        
+        <!-- Delete button to remove selected character from character list. -->
         <form method="post">
             <input type="hidden" asp-for="Character.CharacterID" />
             <input type="submit" value="Delete" class="btn btn-danger" />
         </form>
         <br>
+        <!-- Return to character list. -->
         <u><a class="text-white" asp-page="./Index">Back to List</a></u>
     </div>
 </body>

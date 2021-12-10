@@ -10,10 +10,11 @@ using Dirarys_Final_Project.Models;
 
 namespace Dirarys_Final_Project.Pages.Characters
 {
+    // Page model for character page.
     public class IndexModel : PageModel
     {
-        private readonly Dirarys_Final_Project.Models.CharacterDbContext _context;
-
+        private readonly Dirarys_Final_Project.Models.CharacterDbContext _context; // Replaces "db" variable
+        // Give model access to database.
         public IndexModel(Dirarys_Final_Project.Models.CharacterDbContext context)
         {
             _context = context;
@@ -31,6 +32,7 @@ namespace Dirarys_Final_Project.Pages.Characters
 
         public async Task OnGetAsync()
         {
+            // Selects all characters in list and sorts them.
             var query = _context.Characters.Select(c => c);
 
             switch (CurrentSort)
@@ -72,12 +74,13 @@ namespace Dirarys_Final_Project.Pages.Characters
                     query = query.OrderByDescending(c => c.Specialization);
                     break;
             }
-
+            // Gathers all sorted characters and accounts for paging.
             Character = await query.Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
+            // Method used for search bar to find entered name and return the character.
             if (!ModelState.IsValid)
             {
                 return Page();

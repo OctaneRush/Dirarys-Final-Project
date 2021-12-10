@@ -8,6 +8,7 @@
 <body class="bg-secondary bg-dark text-white">
     <h1>@Html.DisplayFor(model => model.Land.Name)</h1>
 
+    <!-- Lists the selected land and all characters from that land. -->
     <div>
         <hr color="white" />
         <dl class="row">
@@ -28,6 +29,7 @@
             <dt class="col-sm-12">
                 <h6>Characters from this Land :</h6>
             </dt>
+            <!-- List characters for land. -->
             @foreach (var c in Model.Land.Characters)
             {
                 <dd class="col-sm-12">
@@ -37,6 +39,7 @@
         </dl>
     </div>
     <br>
+    <!-- Return to land list. -->
     <div>
         <u><a class="text-white" asp-page="./Land">Back to Land List</a></u>
     </div>

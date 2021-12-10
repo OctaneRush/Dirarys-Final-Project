@@ -7,7 +7,7 @@
 
 <body class="bg-secondary bg-dark text-white">
     <h1>@Html.DisplayFor(model => model.Guild.Name)</h1>
-
+    <!-- Display selected guild and all characters in that guild. -->
     <div>
         <hr color="white" />
         <dl class="row">
@@ -22,6 +22,7 @@
             <dt class="col-sm-12">
                 <h6>Characters in this Guild :</h6>
             </dt>
+            <!-- List characters for guild. -->
             @foreach (var c in Model.Guild.Characters)
             {
                 <dd class="col-sm-12">
@@ -31,6 +32,7 @@
         </dl>
     </div>
     <br>
+    <!-- Return to guild list. -->
     <div>
         <u><a class="text-white" asp-page="./Guild">Back to Guild List</a></u>
     </div>

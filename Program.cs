@@ -20,7 +20,7 @@ namespace Dirarys_Final_Project
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
-
+                // Call SeedData
                 try
                 {
                     SeedData.Initialize(services);

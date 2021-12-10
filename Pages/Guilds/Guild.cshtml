@@ -9,7 +9,7 @@
 
     <h5>Click on a guild to see the characters dedicated to each!</h5>
     <br>
-
+    <!-- Table to display all guilds in database -->
     <div class="border border-white">
         <table class="table">
             <thead>
@@ -19,6 +19,7 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- Displays guild information for each guild. -->
                 @foreach (var g in Model.Guilds)
                 {
                     <tr>

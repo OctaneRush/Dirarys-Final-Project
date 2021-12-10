@@ -9,10 +9,11 @@ using Dirarys_Final_Project.Models;
 
 namespace Dirarys_Final_Project.Pages.Characters
 {
+    // Page model for delete page.
     public class DeleteModel : PageModel
     {
-        private readonly Dirarys_Final_Project.Models.CharacterDbContext _context;
-
+        private readonly Dirarys_Final_Project.Models.CharacterDbContext _context; // Replaces "db" variable
+        // Give model access to database.
         public DeleteModel(Dirarys_Final_Project.Models.CharacterDbContext context)
         {
             _context = context;
@@ -27,7 +28,7 @@ namespace Dirarys_Final_Project.Pages.Characters
             {
                 return NotFound();
             }
-
+            // Finds selected character and includes guild and land.
             Character = await _context.Characters
                 .Include(c => c.Guild)
                 .Include(c => c.Land).FirstOrDefaultAsync(m => m.CharacterID == id);
@@ -45,11 +46,12 @@ namespace Dirarys_Final_Project.Pages.Characters
             {
                 return NotFound();
             }
-
+            // Find character to delete.
             Character = await _context.Characters.FindAsync(id);
 
             if (Character != null)
             {
+                // Delete character and save database changes.
                 _context.Characters.Remove(Character);
                 await _context.SaveChangesAsync();
             }

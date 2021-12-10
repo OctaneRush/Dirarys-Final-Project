@@ -10,10 +10,11 @@ using Dirarys_Final_Project.Models;
 
 namespace Dirarys_Final_Project.Pages.Characters
 {
+    // Page model for edit page.
     public class EditModel : PageModel
     {
-        private readonly Dirarys_Final_Project.Models.CharacterDbContext _context;
-
+        private readonly Dirarys_Final_Project.Models.CharacterDbContext _context; // Replaces "db" variable
+        // Give model access to database.
         public EditModel(Dirarys_Final_Project.Models.CharacterDbContext context)
         {
             _context = context;
@@ -28,7 +29,7 @@ namespace Dirarys_Final_Project.Pages.Characters
             {
                 return NotFound();
             }
-
+            // Finds selected character and includes guild and land.
             Character = await _context.Characters
                 .Include(c => c.Guild)
                 .Include(c => c.Land).FirstOrDefaultAsync(m => m.CharacterID == id);
@@ -37,6 +38,7 @@ namespace Dirarys_Final_Project.Pages.Characters
             {
                 return NotFound();
             }
+            // Lets user choose which guild or land to changed to.
            ViewData["GuildID"] = new SelectList(_context.Guilds, "GuildID", "Name");
            ViewData["LandID"] = new SelectList(_context.LandOfOrigins, "LandOfOriginID", "Name");
             return Page();
@@ -46,6 +48,7 @@ namespace Dirarys_Final_Project.Pages.Characters
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
+            // Changes edited character in database.
             if (!ModelState.IsValid)
             {
                 return Page();
@@ -71,7 +74,7 @@ namespace Dirarys_Final_Project.Pages.Characters
 
             return RedirectToPage("./Index");
         }
-
+        // Returns original character if the character was not edited.
         private bool CharacterExists(int id)
         {
             return _context.Characters.Any(e => e.CharacterID == id);
